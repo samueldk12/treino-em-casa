@@ -1392,6 +1392,7 @@ const timerState = {
 
 const heroStats = document.querySelector("#heroStats");
 const weeklyPlan = document.querySelector("#weeklyPlan");
+const appKpiGrid = document.querySelector("#appKpiGrid");
 const weeklyTargetLabel = document.querySelector("#weeklyTargetLabel");
 const startRoutineHeroButton = document.querySelector("#startRoutineHero");
 const presetGrid = document.querySelector("#presetGrid");
@@ -1455,6 +1456,8 @@ const completeSessionButton = document.querySelector("#completeSession");
 const shuffleWorkoutButton = document.querySelector("#shuffleWorkout");
 const installAppButton = document.querySelector("#installApp");
 const resetAppButton = document.querySelector("#resetApp");
+const navLinks = Array.from(document.querySelectorAll("[data-nav-link]"));
+const navSections = Array.from(document.querySelectorAll("main section[id]"));
 let deferredInstallPrompt = null;
 const guidedWorkoutState = {
   exerciseIds: [...featuredRoutine.exerciseIds],
@@ -1489,6 +1492,7 @@ renderProgress();
 syncStandaloneMode();
 registerInstallPrompt();
 registerServiceWorker();
+setupSectionNavigation();
 
 goalControls.addEventListener("click", handleSegmentClick("goal", goals));
 levelControls.addEventListener("click", handleSegmentClick("level", levels));
@@ -1612,6 +1616,52 @@ sessionBlocks.addEventListener("click", (event) => {
     : button.dataset.defaultLabel;
 });
 
+
+
+function setupSectionNavigation() {
+  if (!navLinks.length || !navSections.length) {
+    return;
+  }
+
+  const setActiveLink = (sectionId) => {
+    navLinks.forEach((link) => {
+      const targetId = link.getAttribute("href")?.replace("#", "");
+      link.classList.toggle("is-active", targetId === sectionId);
+    });
+  };
+
+  const initialHash = window.location.hash.replace("#", "");
+  setActiveLink(initialHash || navSections[0].id);
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      const visibleSections = entries
+        .filter((entry) => entry.isIntersecting)
+        .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+      if (!visibleSections.length) {
+        return;
+      }
+
+      const activeSection = visibleSections[0].target.id;
+      setActiveLink(activeSection);
+    },
+    {
+      rootMargin: "-42% 0px -48% 0px",
+      threshold: [0.25, 0.4, 0.55],
+    }
+  );
+
+  navSections.forEach((section) => observer.observe(section));
+
+  window.addEventListener("hashchange", () => {
+    const hashSection = window.location.hash.replace("#", "");
+    if (hashSection) {
+      setActiveLink(hashSection);
+    }
+  });
+}
+
 function renderControls() {
   goalControls.innerHTML = createButtons(goals, state.goal);
   levelControls.innerHTML = createButtons(levels, state.level);
@@ -1659,6 +1709,22 @@ function renderDashboard() {
   const balance = getBalanceLabel();
 
   weeklyTargetLabel.textContent = `${weeklyTarget} sessoes`;
+
+  if (appKpiGrid) {
+    appKpiGrid.innerHTML = [
+      { label: "Pronto em", value: `${state.duration} min` },
+      { label: "Energia", value: energies.find((item) => item.id === state.energy)?.label ?? "Ritmo estavel" },
+      { label: "Streak", value: `${streak} dias` },
+    ]
+      .map((item) => `
+        <article class="app-kpi">
+          <span>${item.label}</span>
+          <strong>${item.value}</strong>
+        </article>
+      `)
+      .join("");
+  }
+
   heroStats.innerHTML = [
     {
       label: "Sessoes nesta semana",
