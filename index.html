@@ -34,19 +34,20 @@
         <span class="brand-mark">TE</span>
         <span class="brand-copy">
           <strong>Treino em Casa</strong>
-          <small>Sistema de performance pessoal</small>
+          <small>Startup fitness com plano inteligente</small>
         </span>
       </a>
 
       <nav class="topnav" aria-label="Navegação principal">
-        <a href="#dashboard">Dashboard</a>
-        <a href="#planner">Planejador</a>
-        <a href="#library">Biblioteca</a>
-        <a href="#progress">Progresso</a>
+        <a href="#dashboard" data-nav-link>Dashboard</a>
+        <a href="#planner" data-nav-link>Planejador</a>
+        <a href="#library" data-nav-link>Biblioteca</a>
+        <a href="#progress" data-nav-link>Progresso</a>
       </nav>
 
       <div class="topbar-actions">
         <button class="ghost-button" id="installApp" type="button" hidden>Instalar app</button>
+        <span class="app-status-pill">Modo App</span>
         <button class="ghost-button" id="resetApp" type="button">Resetar progresso</button>
       </div>
     </header>
@@ -61,11 +62,17 @@
             O foco segue em costas e ombros, mas agora inclui shadowboxing, reflexo, flexao, abdominal e pernas.
           </p>
 
+          <div class="app-intro-strip">
+            <span class="live-dot" aria-hidden="true"></span>
+            <p>Assistente inteligente ativo • Ajustes em tempo real para seu dia</p>
+          </div>
+
           <div class="hero-actions">
             <button class="primary-button" id="startRoutineHero" type="button">Comecar treino de 30 min</button>
             <a class="secondary-button" href="#library">Ver rotina completa</a>
           </div>
 
+          <div class="app-kpi-grid" id="appKpiGrid"></div>
           <div class="hero-stats" id="heroStats"></div>
         </div>
 
@@ -333,6 +340,27 @@
       </div>
     </section>
   </div>
+
+
+
+  <nav class="bottom-nav" aria-label="Navegação rápida no celular">
+    <a href="#dashboard" data-nav-link>
+      <span aria-hidden="true">🏠</span>
+      <small>Início</small>
+    </a>
+    <a href="#planner" data-nav-link>
+      <span aria-hidden="true">🧭</span>
+      <small>Plano</small>
+    </a>
+    <a href="#library" data-nav-link>
+      <span aria-hidden="true">📚</span>
+      <small>Exercícios</small>
+    </a>
+    <a href="#progress" data-nav-link>
+      <span aria-hidden="true">📈</span>
+      <small>Progresso</small>
+    </a>
+  </nav>
 
   <script src="./script.js"></script>
 </body>
