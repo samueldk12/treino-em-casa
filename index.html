@@ -2,338 +2,197 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#fffaf2">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#09090b">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Treino em Casa">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Treino App">
   <title>Treino em Casa</title>
-  <meta
-    name="description"
-    content="Sistema de treino em casa com planos adaptáveis, biblioteca de exercícios e acompanhamento de progresso."
-  >
+  <meta name="description" content="Sistema minimalista de treino em casa">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Manrope:wght@400;500;700;800&display=swap"
-    rel="stylesheet"
-  >
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="icon" type="image/png" sizes="192x192" href="./assets/icons/icon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/icons/apple-touch-icon.png">
   <link rel="stylesheet" href="./styles.css">
 </head>
-<body>
-  <div class="page-shell">
-    <div class="ambient ambient-a"></div>
-    <div class="ambient ambient-b"></div>
+<body class="bg-black text-white">
+  <div class="page-shell" id="app">
+    <!-- Hidden Elements needed by JS -->
+    <div style="display:none;" id="hidden-js-elements">
+      <div id="weeklyPlan"></div>
+      <strong id="weeklyTargetLabel">4 sessões</strong>
+      <div id="presetGrid"></div>
+      <div id="goalControls"></div>
+      <div id="levelControls"></div>
+      <input id="durationRange" type="range" min="15" max="60" step="5" value="30">
+      <strong id="durationLabel">30 min</strong>
+      <div id="energyControls"></div>
+      <button id="shuffleWorkout"></button>
+      <button id="completeSession"></button>
+      <div id="focusBand"></div>
+      <h3 id="sessionTitle"></h3>
+      <span id="sessionMeta"></span>
+      <div id="sessionBlocks"></div>
+      <strong id="timerDisplay"></strong>
+      <p id="timerHint"></p>
+      <button id="toggleTimer"></button>
+      <button id="resetTimer"></button>
+      <button id="nextBlock"></button>
+      <h3 id="coachTitle"></h3>
+      <p id="coachText"></p>
+      <div id="libraryFilterControls"></div>
+      <button id="startGuidedWorkout"></button>
+      <button id="installApp"></button>
+      <button id="resetApp"></button>
+    </div>
 
-    <header class="topbar">
-      <a class="brand" href="#dashboard">
-        <span class="brand-mark">TE</span>
-        <span class="brand-copy">
-          <strong>Treino em Casa</strong>
-          <small>Sistema de performance pessoal</small>
-        </span>
-      </a>
+    <!-- MAIN HOME VIEW -->
+    <main id="screen-home" class="screen active">
+      <header class="topbar">
+        <div class="brand-mark">TRNO</div>
+      </header>
 
-      <nav class="topnav" aria-label="Navegação principal">
-        <a href="#dashboard">Dashboard</a>
-        <a href="#planner">Planejador</a>
-        <a href="#library">Biblioteca</a>
-        <a href="#progress">Progresso</a>
-      </nav>
-
-      <div class="topbar-actions">
-        <button class="ghost-button" id="installApp" type="button" hidden>Instalar app</button>
-        <button class="ghost-button" id="resetApp" type="button">Resetar progresso</button>
-      </div>
-    </header>
-
-    <main>
-      <section class="hero" id="dashboard">
+      <section class="hero active" id="dashboard">
         <div class="hero-copy">
-          <p class="eyebrow">Treino com halteres em casa</p>
-          <h1>Rotina de 30 min com costas, ombros, boxe, flexao e abdominal no mesmo treino.</h1>
+          <p class="eyebrow">Plano Diario</p>
+          <h1>Treino de Corpo Inteiro 30 min</h1>
           <p class="hero-text">
-            O treino diario foi montado para homem, misturando halteres e movimentos sem equipamento.
-            O foco segue em costas e ombros, mas agora inclui shadowboxing, reflexo, flexao, abdominal e pernas.
+            Força com halteres + calistenia. Clique iniciar e acompanhe sem pensar e sem rolar a tela.
           </p>
 
           <div class="hero-actions">
-            <button class="primary-button" id="startRoutineHero" type="button">Comecar treino de 30 min</button>
-            <a class="secondary-button" href="#library">Ver rotina completa</a>
+            <!-- This triggers the guided workout in JS -->
+            <button class="primary-button" id="startRoutineHero" type="button">INICIAR TREINO DO DIA</button>
           </div>
 
           <div class="hero-stats" id="heroStats"></div>
         </div>
-
-        <aside class="spotlight-card">
-          <div class="spotlight-head">
-            <p class="eyebrow">Plano da semana</p>
-            <h2>Rotação equilibrada</h2>
-          </div>
-
-          <div class="spotlight-grid" id="weeklyPlan"></div>
-
-          <div class="spotlight-footer">
-            <div>
-              <span class="label">Meta semanal</span>
-              <strong id="weeklyTargetLabel">4 sessões</strong>
-            </div>
-            <button class="primary-button compact" id="completeSession" type="button">
-              Concluir treino atual
-            </button>
-          </div>
-        </aside>
-      </section>
-
-      <section class="quick-start" id="quickStart">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Atalhos de rotina</p>
-            <h2>Comece sem pensar demais</h2>
-          </div>
-          <p>
-            Escolha um preset pensado para cenários reais do dia a dia e ajuste depois,
-            se quiser. Menos atrito para começar significa mais consistência.
-          </p>
-        </div>
-
-        <div class="preset-grid" id="presetGrid"></div>
-      </section>
-
-      <section class="planner" id="planner">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Planejador adaptável</p>
-            <h2>Monte a sessão ideal para hoje</h2>
-          </div>
-          <p>
-            Ajuste o foco do treino, seu nível e o tempo disponível.
-            O sistema recompõe a sessão em tempo real com blocos objetivos.
-          </p>
-        </div>
-
-        <div class="planner-layout">
-          <aside class="control-panel">
-            <div class="control-group">
-              <span class="label">Objetivo</span>
-              <div class="segmented" id="goalControls"></div>
-            </div>
-
-            <div class="control-group">
-              <span class="label">Nível</span>
-              <div class="segmented" id="levelControls"></div>
-            </div>
-
-            <div class="control-group">
-              <div class="slider-row">
-                <label class="label" for="durationRange">Tempo disponível</label>
-                <strong id="durationLabel">30 min</strong>
-              </div>
-              <input id="durationRange" type="range" min="15" max="60" step="5" value="30">
-            </div>
-
-            <div class="control-group">
-              <span class="label">Check-in de energia</span>
-              <div class="energy-grid" id="energyControls"></div>
-            </div>
-
-            <button class="secondary-button full-width" id="shuffleWorkout" type="button">
-              Gerar outra combinação
-            </button>
-          </aside>
-
-          <div class="session-panel">
-            <div class="session-summary">
-              <div>
-                <p class="eyebrow">Sessão sugerida</p>
-                <h3 id="sessionTitle">Força total para o corpo inteiro</h3>
-              </div>
-              <div class="session-summary-meta">
-                <span id="sessionMeta">30 min • Intermediário • Sem equipamento</span>
-              </div>
-            </div>
-
-            <div class="session-runtime">
-              <article class="timer-card">
-                <span class="label">Timer da sessão</span>
-                <strong id="timerDisplay" aria-live="polite">30:00</strong>
-                <p id="timerHint">Pronto para iniciar. O sistema vai acompanhar o bloco atual.</p>
-                <div class="timer-actions">
-                  <button class="primary-button compact" id="toggleTimer" type="button">Iniciar</button>
-                  <button class="secondary-button compact" id="resetTimer" type="button">Reiniciar</button>
-                  <button class="ghost-button" id="nextBlock" type="button">Próximo bloco</button>
-                </div>
-              </article>
-
-              <article class="coach-card">
-                <span class="label">Leitura do sistema</span>
-                <h3 id="coachTitle">Treino equilibrado para hoje</h3>
-                <p id="coachText">
-                  A sessão combina densidade e recuperação para manter progresso sem exagerar na carga.
-                </p>
-              </article>
-            </div>
-
-            <div class="focus-band" id="focusBand"></div>
-            <div class="session-blocks" id="sessionBlocks"></div>
-          </div>
-        </div>
       </section>
 
       <section class="library" id="library">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Biblioteca guiada com boxe e halteres</p>
-            <h2>Biblioteca completa com boxe, peito, pernas, alongamento e core</h2>
-          </div>
-          <p>
-            Alem da rotina guiada de 30 minutos, agora voce tem uma biblioteca com 28 exercicios
-            entre boxe, halteres, peito, pernas, flexoes, abdominal, posterior e alongamentos.
-          </p>
-          <button class="primary-button compact" id="startGuidedWorkout" type="button">Comecar treino guiado</button>
-        </div>
-
-        <div class="library-toolbar">
-          <div class="segmented" id="libraryFilterControls"></div>
-          <label class="search-field">
-            <span>Buscar exercício</span>
-            <input id="exerciseSearch" type="search" placeholder="Ex.: supino, agachamento, alongamento, flexao">
-          </label>
-        </div>
-
-        <div class="exercise-grid" id="exerciseGrid"></div>
+        <h2 style="font-weight: 800; font-family: 'Space Grotesk'; color: var(--accent); margin-bottom: 24px;">BIBLIOTECA</h2>
+        <input id="exerciseSearch" type="search" placeholder="Buscar exercício..." style="width: 100%; padding: 16px; border-radius: var(--radius-lg); border: 2px solid var(--line); background: var(--surface); color: var(--text); font-size: 1rem; margin-bottom: 24px;">
+        <div class="exercise-grid" id="exerciseGrid" style="display: grid; gap: 16px;"></div>
       </section>
 
       <section class="progress" id="progress">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Consistência acima de intensidade aleatória</p>
-            <h2>Seu progresso precisa ser simples de ler</h2>
+        <h2 style="font-weight: 800; font-family: 'Space Grotesk'; color: var(--accent); margin-bottom: 24px;">PROGRESSO</h2>
+        
+        <div style="background: var(--surface); padding: 24px; border-radius: var(--radius-xl); margin-bottom: 24px;">
+          <p class="eyebrow" style="color: var(--accent)">Consistencia</p>
+          <h3 id="consistencyTitle" style="font-size: 1.5rem; margin-bottom: 8px;">0 concluidos</h3>
+          <span id="consistencyBadge" style="font-weight: 800; color: var(--muted)">0%</span>
+          <div class="bar-track" style="height: 8px; margin-top: 16px; background: var(--line)">
+            <div class="bar-fill" id="consistencyFill" style="background: var(--accent)"></div>
           </div>
-          <p>
-            Acompanhe frequência, distribuição da semana e últimos treinos concluídos
-            para ajustar sua carga sem achismo.
-          </p>
         </div>
 
-        <div class="progress-layout">
-          <article class="panel">
-            <div class="panel-header">
-              <div>
-                <span class="label">Frequência semanal</span>
-                <h3 id="consistencyTitle">0 de 4 sessões concluídas</h3>
-              </div>
-              <span class="badge" id="consistencyBadge">0%</span>
-            </div>
-            <div class="bar-track">
-              <div class="bar-fill" id="consistencyFill"></div>
-            </div>
-            <div class="week-bars" id="weekBars"></div>
-          </article>
-
-          <article class="panel">
-            <div class="panel-header">
-              <div>
-                <span class="label">Últimas sessões</span>
-                <h3>Histórico recente</h3>
-              </div>
-            </div>
-            <div class="history-list" id="historyList"></div>
-          </article>
-        </div>
+        <div class="week-bars" id="weekBars" style="display: flex; gap: 8px; justify-content: space-between; margin-bottom: 32px; overflow-x: auto; padding-bottom: 8px;"></div>
+        
+        <div id="progressOverview" style="display: flex; gap: 12px; overflow-x: auto; padding-bottom: 16px;"></div>
+        
+        <h3 style="font-size: 1.2rem; margin-bottom: 16px;">Historico</h3>
+        <div class="history-list" id="historyList" style="display: grid; gap: 12px;"></div>
       </section>
     </main>
+
+    <!-- BOTTOM NAV FOR PWA FEEL (JS WILL BE NEEDED TO SWITCH PANELS) -->
+    <nav id="bottom-nav" class="bottom-nav">
+      <button class="nav-btn active" onclick="switchView('dashboard')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        <span>Treino</span>
+      </button>
+      <button class="nav-btn" onclick="switchView('library')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        <span>Buscador</span>
+      </button>
+      <button class="nav-btn" onclick="switchView('progress')">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        <span>Progresso</span>
+      </button>
+    </nav>
   </div>
 
+  <!-- GUIDED FULLSCREEN MODAL -->
   <div class="guided-modal" id="guidedModal" aria-hidden="true">
     <div class="guided-backdrop" id="guidedBackdrop"></div>
     <section class="guided-dialog" role="dialog" aria-modal="true" aria-labelledby="guidedTitle">
-      <button class="guided-close" id="guidedClose" type="button" aria-label="Fechar treino guiado">Fechar</button>
+      <button class="guided-close" id="guidedClose" type="button" aria-label="Fechar treino">Fechar</button>
 
       <div class="guided-progress">
-        <span class="label" id="guidedStepLabel">Exercicio 1 de 6</span>
-        <div class="bar-track compact">
+        <span id="guidedStepLabel">Exercicio 1 de 6</span>
+        <div class="bar-track">
           <div class="bar-fill" id="guidedProgressFill"></div>
         </div>
       </div>
 
-      <div class="guided-hud">
-        <article class="guided-hud-card">
-          <span class="label">Status</span>
-          <strong id="guidedPhaseLabel">Pronto</strong>
-          <small id="guidedSetLabel">Set 1 de 3</small>
-        </article>
-        <article class="guided-hud-card">
-          <span class="label">Tempo da fase</span>
-          <strong id="guidedPhaseTime">00:45</strong>
-          <small id="guidedPhaseHint">Execucao do exercicio atual</small>
-        </article>
-        <article class="guided-hud-card">
-          <span class="label">Tempo da sessao</span>
-          <strong id="guidedSessionTime">00:00</strong>
-          <small id="guidedSessionMeta">Meta 30 min</small>
-        </article>
-        <article class="guided-hud-card">
-          <span class="label">Proximo</span>
-          <strong id="guidedNextUp">Desenvolvimento de ombro em pe</strong>
-          <small id="guidedVoiceStatus">Voz desligada</small>
-        </article>
+      <div class="guided-media">
+        <img id="guidedImage" alt="" src="">
+        <iframe id="guidedVideo" title="Video" loading="lazy" allow="autoplay; fullscreen; picture-in-picture; clipboard-write"></iframe>
       </div>
 
-      <div class="guided-layout">
-        <div class="guided-media">
-          <img id="guidedImage" alt="" src="">
-          <iframe
-            id="guidedVideo"
-            title="Video do exercicio"
-            loading="lazy"
-            allow="autoplay; fullscreen; picture-in-picture; clipboard-write"
-            referrerpolicy="strict-origin-when-cross-origin"
-          ></iframe>
+      <div class="guided-content">
+        <span id="guidedBlock"></span>
+        <h2 id="guidedTitle"></h2>
+        
+        <div class="guided-hud">
+          <div class="guided-hud-card">
+            <span class="label" id="guidedPhaseLabel" style="color: var(--muted); font-size: 0.9rem; font-weight: 700; text-transform: uppercase;">Pronto</span><br>
+            <span id="guidedPhaseTime">00:45</span><br>
+            <span id="guidedSetLabel" style="color: var(--muted); font-size: 0.9rem;">Set 1 de 3</span>
+          </div>
         </div>
 
-        <div class="guided-content">
-          <span class="label" id="guidedBlock"></span>
-          <h2 id="guidedTitle">Exercicio</h2>
-          <p id="guidedDescription"></p>
+        <!-- Hidden elements needed for JS logic -->
+        <p id="guidedDescription"></p>
+        <div id="guidedMetrics"></div>
+        <div id="guidedNextUp"></div>
+        <div id="guidedVoiceStatus"></div>
+        <div id="guidedSessionTime"></div>
+        <div id="guidedSessionMeta"></div>
+        <div id="guidedPhaseHint"></div>
+        <ul id="guidedSteps"></ul>
+        <ul id="guidedTips"></ul>
 
-          <div class="guided-metrics" id="guidedMetrics"></div>
+        <div class="guided-prompt-panel" id="guidedPromptPanel" hidden>
+          <strong id="guidedPromptCurrent"></strong>
+          <p id="guidedPromptDescription" style="color: var(--muted); font-size: 0.9rem; max-width: 300px; margin: 8px auto 0;"></p>
+        </div>
 
-          <div class="guided-prompt-panel" id="guidedPromptPanel" hidden>
-            <span class="label">Cue de boxe</span>
-            <strong id="guidedPromptCurrent">Jab</strong>
-            <p id="guidedPromptDescription">Solte o golpe com a guarda alta e retorne rapido para a base.</p>
+        <div class="guided-actions">
+          <button id="guidedToggleSession" type="button">INICIAR SESSÃO</button>
+          
+          <div style="display: flex; gap: 8px;">
+            <button class="secondary-button" id="guidedPrev" type="button">Anterior</button>
+            <button class="secondary-button" id="guidedNext" type="button">Prox</button>
           </div>
-
-          <div class="guided-columns">
-            <div>
-              <span class="label">Como fazer</span>
-              <ul id="guidedSteps"></ul>
-            </div>
-            <div>
-              <span class="label">Cues de tecnica</span>
-              <ul id="guidedTips"></ul>
-            </div>
-          </div>
-
-          <div class="guided-actions">
-            <button class="secondary-button compact" id="guidedPrev" type="button">Anterior</button>
-            <button class="primary-button compact" id="guidedToggleSession" type="button">Iniciar sessao</button>
-            <button class="ghost-button" id="guidedSkipPhase" type="button">Pular fase</button>
-            <button class="secondary-button compact" id="guidedRestartSession" type="button">Reiniciar</button>
-            <button class="ghost-button" id="guidedVoiceToggle" type="button">Ativar voz</button>
-            <a class="ghost-button" id="guidedSource" target="_blank" rel="noreferrer">Abrir fonte do video</a>
-            <button class="primary-button compact" id="guidedNext" type="button">Proximo</button>
-          </div>
+          
+          <button class="ghost-button" id="guidedRestartSession" type="button" style="margin-top: 16px;">Reiniciar</button>
+          <button class="ghost-button" id="guidedVoiceToggle" type="button" style="display:none;">Ativar voz</button>
+          <a class="ghost-button" id="guidedSource" target="_blank" rel="noreferrer" style="display:none;">Abrir fonte</a>
+          <button id="guidedSkipPhase" type="button" style="display:none;"></button>
         </div>
       </div>
     </section>
   </div>
 
+  <script>
+    // Simple inline logic for view switching to keep it fast and separate from the 3.5k line script.js
+    function switchView(viewId) {
+      document.getElementById('dashboard').classList.remove('active');
+      document.getElementById('library').classList.remove('active');
+      document.getElementById('progress').classList.remove('active');
+      
+      document.getElementById(viewId).classList.add('active');
+      
+      const buttons = document.querySelectorAll('.nav-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      event.currentTarget.classList.add('active');
+    }
+  </script>
   <script src="./script.js"></script>
 </body>
 </html>

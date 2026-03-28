@@ -973,6 +973,390 @@ const exerciseLibrary = [
       "Se sentir compressao, diminua a amplitude.",
     ],
   },
+  {
+    id: "glute-bridge",
+    name: "Ponte de gluteo",
+    goal: "lower-body",
+    level: "beginner",
+    duration: "3 x 15",
+    equipment: "Sem equipamento",
+    stimulus: "Gluteos, posterior e estabilidade de quadril",
+    description: "Entrou a partir da lista de treinos em casa para fortalecer gluteos sem halter e dar suporte melhor para agachar e correr.",
+    imageUrl: "https://i.ytimg.com/vi/OUgsJ8-Vi0E/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/OUgsJ8-Vi0E?rel=0",
+    sourceUrl: "https://www-healthline-com.translate.goog/health/fitness-exercise/at-home-workouts?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc",
+    block: "Biblioteca extra",
+    focus: "Gluteos",
+    rest: "25s",
+    sets: 3,
+    reps: "15",
+    workSeconds: 35,
+    restSeconds: 25,
+    loadHint: "Peso corporal com subida forte e pausa no topo",
+    steps: [
+      "Deite de barriga para cima com joelhos dobrados e pes no chao.",
+      "Empurre os calcanhares contra o solo e eleve o quadril.",
+      "Segure um instante apertando os gluteos no topo.",
+      "Desca com controle sem relaxar completamente no chao.",
+    ],
+    tips: [
+      "Nao arquear demais a lombar na subida.",
+      "Pense em subir pelo quadril e nao pelas costas.",
+      "Se quiser mais intensidade, aumente a pausa no topo.",
+    ],
+  },
+  {
+    id: "knee-push-up",
+    name: "Flexao com joelhos apoiados",
+    goal: "push-core",
+    level: "beginner",
+    duration: "3 x 12-15",
+    equipment: "Sem equipamento",
+    stimulus: "Peitoral, triceps e tecnica de empurrar",
+    description: "Versao regressiva da flexao para treinar peito em casa com boa forma antes de evoluir para o chao completo.",
+    imageUrl: "https://i.ytimg.com/vi/WcHtt6zT3Go/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/WcHtt6zT3Go?rel=0",
+    sourceUrl: "https://www-healthline-com.translate.goog/health/fitness-exercise/at-home-workouts?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc",
+    block: "Biblioteca extra",
+    focus: "Peito iniciante",
+    rest: "25s",
+    sets: 3,
+    reps: "12-15",
+    workSeconds: 35,
+    restSeconds: 25,
+    loadHint: "Peso corporal com joelhos apoiados e tronco alinhado",
+    steps: [
+      "Apoie os joelhos no chao e alinhe quadril, tronco e ombros.",
+      "Posicione as maos um pouco mais largas que os ombros.",
+      "Desca o peito controlando o corpo inteiro.",
+      "Empurre o chao ate voltar, sem perder o abdomen firme.",
+    ],
+    tips: [
+      "Nao dobre o quadril para facilitar demais.",
+      "Leve o peito para o chao antes do queixo.",
+      "Boa opcao para ganhar volume com tecnica limpa.",
+    ],
+  },
+  {
+    id: "bird-dog",
+    name: "Bird dog",
+    goal: "push-core",
+    level: "beginner",
+    duration: "3 x 8-10 por lado",
+    equipment: "Sem equipamento",
+    stimulus: "Core, lombar estavel e coordenacao",
+    description: "Exercicio tecnico da lista de treinos em casa para fortalecer o centro do corpo e melhorar controle de tronco.",
+    imageUrl: "https://i.ytimg.com/vi/k2azbhhuKuM/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/k2azbhhuKuM?rel=0",
+    sourceUrl: "https://www-healthline-com.translate.goog/health/fitness-exercise/at-home-workouts?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc",
+    block: "Biblioteca extra",
+    focus: "Core e postura",
+    rest: "20s",
+    sets: 3,
+    reps: "8-10 por lado",
+    workSeconds: 35,
+    restSeconds: 20,
+    loadHint: "Peso corporal com movimento lento e preciso",
+    steps: [
+      "Fique em quatro apoios com maos sob os ombros e joelhos sob o quadril.",
+      "Estenda um braco a frente e a perna oposta para tras.",
+      "Pausa curta no alongamento maximo sem girar o tronco.",
+      "Volte ao centro e troque os lados.",
+    ],
+    tips: [
+      "Mantenha o umbigo levemente para dentro.",
+      "Nao jogue a perna muito alto.",
+      "Qualidade do controle importa mais do que velocidade.",
+    ],
+  },
+  {
+    id: "plank-to-downward-dog",
+    name: "Prancha para cachorro olhando para baixo",
+    goal: "mobility",
+    level: "beginner",
+    duration: "3 x 30-40s",
+    equipment: "Sem equipamento",
+    stimulus: "Ombros, core, posterior e mobilidade global",
+    description: "Movimento dinâmico vindo dos treinos em casa para integrar core, ombros e alongamento da cadeia posterior.",
+    imageUrl: "https://i.ytimg.com/vi/59al36qfnU4/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/59al36qfnU4?rel=0",
+    sourceUrl: "https://www-healthline-com.translate.goog/health/fitness-exercise/at-home-workouts?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc",
+    block: "Biblioteca extra",
+    focus: "Mobilidade dinamica",
+    rest: "20s",
+    sets: 3,
+    reps: "30-40s",
+    workSeconds: 35,
+    restSeconds: 20,
+    loadHint: "Peso corporal com respiracao fluida",
+    steps: [
+      "Comece em prancha alta com maos firmes no chao.",
+      "Empurre o quadril para cima levando o corpo ao cachorro olhando para baixo.",
+      "Volte para a prancha sem colapsar a lombar.",
+      "Repita em ritmo constante com respiracao controlada.",
+    ],
+    tips: [
+      "Empurre o chao para longe durante todo o movimento.",
+      "Mantenha costelas encaixadas na prancha.",
+      "Excelente para aquecer ombros e posterior.",
+    ],
+  },
+  {
+    id: "farmer-walk",
+    name: "Farmer walk com halteres",
+    goal: "back-shoulders",
+    level: "intermediate",
+    duration: "3 x 30-45s",
+    equipment: "2 halteres",
+    stimulus: "Pegada, trapezio, core e condicionamento",
+    description: "Exercicio classico da lista de melhores movimentos com halter para construir pegada forte e estabilidade global.",
+    imageUrl: "https://i.ytimg.com/vi/1uOs1hP3u4A/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/1uOs1hP3u4A?rel=0",
+    sourceUrl: "https://www-menshealth-com.translate.goog/uk/building-muscle/a755117/the-10-best-dumbbell-exercises/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc&_x_tr_hist=true",
+    block: "Biblioteca extra",
+    focus: "Pegada e core",
+    rest: "45s",
+    sets: 3,
+    reps: "30-45s",
+    workSeconds: 40,
+    restSeconds: 45,
+    loadHint: "2 halteres pesados com postura alta",
+    steps: [
+      "Pegue os halteres ao lado do corpo e fique alto.",
+      "Caminhe em linha reta com passos curtos e firmes.",
+      "Mantenha ombros para baixo e abdomen travado.",
+      "Pare com controle e reorganize antes da proxima volta.",
+    ],
+    tips: [
+      "Nao deixe os ombros subirem em direcao as orelhas.",
+      "Pense em crescer para cima enquanto caminha.",
+      "Otimo finalizador para forca e condicionamento.",
+    ],
+  },
+  {
+    id: "zottman-curl",
+    name: "Rosca Zottman com halteres",
+    goal: "back-shoulders",
+    level: "intermediate",
+    duration: "3 x 10-12",
+    equipment: "2 halteres",
+    stimulus: "Biceps, antebraco e controle de pegada",
+    description: "Entrou da selecao de halteres por ser uma variacao rica para biceps e antebraco no mesmo movimento.",
+    imageUrl: "https://i.ytimg.com/vi/5Go_uOTnFl0/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/5Go_uOTnFl0?rel=0",
+    sourceUrl: "https://www-menshealth-com.translate.goog/uk/building-muscle/a755117/the-10-best-dumbbell-exercises/?_x_tr_sl=en&_x_tr_tl=pt&_x_tr_hl=pt&_x_tr_pto=tc&_x_tr_hist=true",
+    block: "Biblioteca extra",
+    focus: "Biceps e antebraco",
+    rest: "35s",
+    sets: 3,
+    reps: "10-12",
+    workSeconds: 35,
+    restSeconds: 35,
+    loadHint: "Carga moderada com descida controlada",
+    steps: [
+      "Suba os halteres como em uma rosca tradicional com palmas para cima.",
+      "No topo, gire as maos para a pegada pronada.",
+      "Desca lentamente com as palmas viradas para baixo.",
+      "Gire novamente embaixo e reinicie a repeticao.",
+    ],
+    tips: [
+      "Nao balance o tronco para subir a carga.",
+      "A descida pronada e a parte mais importante.",
+      "Use menos peso e mais controle.",
+    ],
+  },
+  {
+    id: "dumbbell-chest-fly",
+    name: "Crucifixo com halteres",
+    goal: "push-core",
+    level: "intermediate",
+    duration: "3 x 10-12",
+    equipment: "2 halteres + banco ou chao",
+    stimulus: "Peitoral e controle de amplitude",
+    description: "Adicionado da lista da Hydrow para ampliar as opcoes de peito com halter e variar o estimulo de abertura.",
+    imageUrl: "https://i.ytimg.com/vi/rk8YayRoTRQ/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/rk8YayRoTRQ?rel=0",
+    sourceUrl: "https://hydrow.com/blog/the-26-best-dumbbell-workouts-at-home/",
+    block: "Biblioteca extra",
+    focus: "Peitoral",
+    rest: "40s",
+    sets: 3,
+    reps: "10-12",
+    workSeconds: 40,
+    restSeconds: 40,
+    loadHint: "Carga leve a moderada com grande controle",
+    steps: [
+      "Deite com halteres acima do peito e cotovelos levemente dobrados.",
+      "Abra os bracos em arco ate sentir o peitoral alongar.",
+      "Feche o movimento como se fosse abracar um barril.",
+      "Pare antes de perder controle ou conforto no ombro.",
+    ],
+    tips: [
+      "Nao transforme em press no final da subida.",
+      "Amplitude confortavel vale mais do que descer demais.",
+      "Mantenha as escapas apoiadas e o peito aberto.",
+    ],
+  },
+  {
+    id: "turkish-get-up",
+    name: "Turkish get-up com halter",
+    goal: "push-core",
+    level: "advanced",
+    duration: "3 x 4-6 por lado",
+    equipment: "1 halter",
+    stimulus: "Core, ombro, estabilidade e coordenacao",
+    description: "Movimento completo da lista da Hydrow para quem quer estabilidade, controle de tronco e forca integrada.",
+    imageUrl: "https://i.ytimg.com/vi/saYKvqSscuY/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/saYKvqSscuY?rel=0",
+    sourceUrl: "https://hydrow.com/blog/the-26-best-dumbbell-workouts-at-home/",
+    block: "Biblioteca extra",
+    focus: "Estabilidade total",
+    rest: "45s",
+    sets: 3,
+    reps: "4-6 por lado",
+    workSeconds: 45,
+    restSeconds: 45,
+    loadHint: "1 halter leve a moderado para controle",
+    steps: [
+      "Comece deitado com um halter estendido acima do ombro.",
+      "Suba por etapas: cotovelo, mao, quadril alto, joelho, meio-ajoelhado e em pe.",
+      "Desca pelo mesmo caminho mantendo o olhar no halter.",
+      "Repita todas as repeticoes antes de trocar de lado.",
+    ],
+    tips: [
+      "Nao tenha pressa; cada etapa precisa ficar solida.",
+      "Se for novo no exercicio, pratique sem carga antes.",
+      "Mantenha o punho neutro e o ombro firme.",
+    ],
+  },
+  {
+    id: "triceps-kickback",
+    name: "Triceps kickback com halteres",
+    goal: "push-core",
+    level: "beginner",
+    duration: "3 x 12-15",
+    equipment: "2 halteres leves",
+    stimulus: "Triceps e controle de cotovelo",
+    description: "Boa opcao da lista da Hydrow para complementar os movimentos de peito e dar mais volume aos bracos em casa.",
+    imageUrl: "https://i.ytimg.com/vi/WhBxKbe1-NU/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/WhBxKbe1-NU?rel=0",
+    sourceUrl: "https://hydrow.com/blog/the-26-best-dumbbell-workouts-at-home/",
+    block: "Biblioteca extra",
+    focus: "Triceps",
+    rest: "30s",
+    sets: 3,
+    reps: "12-15",
+    workSeconds: 35,
+    restSeconds: 30,
+    loadHint: "Carga leve com extensao completa do cotovelo",
+    steps: [
+      "Incline o tronco com joelhos levemente dobrados.",
+      "Puxe os cotovelos para tras e mantenha-os fixos ao lado do corpo.",
+      "Estenda os antebracos para tras ate contrair o triceps.",
+      "Volte devagar sem perder a posicao do cotovelo.",
+    ],
+    tips: [
+      "Evite balancar o ombro para ajudar o movimento.",
+      "Pense em travar o cotovelo no ar.",
+      "Menos carga costuma melhorar muito a forma.",
+    ],
+  },
+  {
+    id: "standing-pec-stretch",
+    name: "Alongamento de peitoral na parede",
+    goal: "mobility",
+    level: "beginner",
+    duration: "2 x 30s por lado",
+    equipment: "Parede ou portal",
+    stimulus: "Peitoral e ombro anterior",
+    description: "Alongamento inspirado no guia de alongamento para abrir o peito e aliviar rigidez depois de presses e flexoes.",
+    imageUrl: "https://i.ytimg.com/vi/yx8nPhe6zRE/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/yx8nPhe6zRE?rel=0",
+    sourceUrl: "https://treinomestre.com.br/alongamento/",
+    block: "Biblioteca extra",
+    focus: "Peito e ombros",
+    rest: "15s",
+    sets: 2,
+    reps: "30s por lado",
+    workSeconds: 30,
+    restSeconds: 15,
+    loadHint: "Sem carga, com respiracao lenta",
+    steps: [
+      "Apoie o antebraco em uma parede ou portal com o cotovelo na altura do ombro.",
+      "Gire levemente o tronco para o lado oposto ate sentir alongar o peitoral.",
+      "Respire fundo sem forcar o ombro.",
+      "Troque o lado apos o tempo.",
+    ],
+    tips: [
+      "Nao empurre agressivamente a articulacao.",
+      "Pequena rotacao ja costuma ser suficiente.",
+      "Funciona muito bem no fim do treino de peito.",
+    ],
+  },
+  {
+    id: "standing-quadriceps-stretch",
+    name: "Alongamento em pe para quadriceps",
+    goal: "mobility",
+    level: "beginner",
+    duration: "2 x 30s por lado",
+    equipment: "Sem equipamento",
+    stimulus: "Quadriceps e flexor de quadril",
+    description: "Versao simples do guia de alongamentos para soltar a frente da coxa depois de agachamentos, avancos e corridas.",
+    imageUrl: "https://i.ytimg.com/vi/zi5__zBRzYc/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/zi5__zBRzYc?rel=0",
+    sourceUrl: "https://treinomestre.com.br/alongamento/",
+    block: "Biblioteca extra",
+    focus: "Quadriceps",
+    rest: "15s",
+    sets: 2,
+    reps: "30s por lado",
+    workSeconds: 30,
+    restSeconds: 15,
+    loadHint: "Sem carga, com quadril encaixado",
+    steps: [
+      "Fique em pe e segure um pe atras do corpo com a mao do mesmo lado.",
+      "Aproxime o calcanhar do gluteo sem abrir o joelho para fora.",
+      "Mantenha o quadril encaixado e o tronco alto.",
+      "Troque o lado apos o tempo.",
+    ],
+    tips: [
+      "Use apoio na parede se precisar de equilibrio.",
+      "Nao arqueie a lombar para puxar mais.",
+      "Contrair o gluteo ajuda a melhorar o alongamento.",
+    ],
+  },
+  {
+    id: "seated-hamstring-stretch",
+    name: "Alongamento sentado para posterior",
+    goal: "mobility",
+    level: "beginner",
+    duration: "2 x 30-40s",
+    equipment: "Sem equipamento",
+    stimulus: "Posterior de coxa e lombar",
+    description: "Alongamento do guia do Treino Mestre para melhorar mobilidade de posterior e aliviar tensao na parte de tras das pernas.",
+    imageUrl: "https://i.ytimg.com/vi/aJvfeuu71gw/hqdefault.jpg",
+    videoEmbedUrl: "https://www.youtube.com/embed/aJvfeuu71gw?rel=0",
+    sourceUrl: "https://treinomestre.com.br/alongamento/",
+    block: "Biblioteca extra",
+    focus: "Posterior de coxa",
+    rest: "15s",
+    sets: 2,
+    reps: "30-40s",
+    workSeconds: 35,
+    restSeconds: 15,
+    loadHint: "Sem carga, respirando e relaxando a cada exalacao",
+    steps: [
+      "Sente no chao com as pernas estendidas a frente.",
+      "Incline o tronco na direcao dos pes mantendo a coluna longa.",
+      "Pare no ponto em que sentir o posterior alongar sem dor.",
+      "Respire fundo e aprofunde aos poucos se houver espaco.",
+    ],
+    tips: [
+      "Evite puxar o pescoco ou curvar demais os ombros.",
+      "Flexione levemente os joelhos se estiver muito travado.",
+      "Use a exalacao para ganhar amplitude com calma.",
+    ],
+  },
 ];
 
 const featuredRoutine = {
@@ -1450,6 +1834,7 @@ const consistencyTitle = document.querySelector("#consistencyTitle");
 const consistencyBadge = document.querySelector("#consistencyBadge");
 const consistencyFill = document.querySelector("#consistencyFill");
 const weekBars = document.querySelector("#weekBars");
+const progressOverview = document.querySelector("#progressOverview");
 const historyList = document.querySelector("#historyList");
 const completeSessionButton = document.querySelector("#completeSession");
 const shuffleWorkoutButton = document.querySelector("#shuffleWorkout");
@@ -1833,16 +2218,43 @@ function renderProgress() {
   const weeklyTarget = 4;
   const completedThisWeek = getCompletedThisWeek();
   const progress = Math.min(100, Math.round((completedThisWeek / weeklyTarget) * 100));
+  const streak = calculateStreak();
+  const balance = getBalanceLabel();
+  const totalSessions = state.completedSessions.length;
 
   consistencyTitle.textContent = `${completedThisWeek} de ${weeklyTarget} sessoes concluidas`;
   consistencyBadge.textContent = `${progress}%`;
   consistencyFill.style.width = `${progress}%`;
 
+  progressOverview.innerHTML = [
+    {
+      label: "Sequencia atual",
+      value: `${streak} dia${streak === 1 ? "" : "s"}`,
+    },
+    {
+      label: "Foco dominante",
+      value: balance,
+    },
+    {
+      label: "Sessoes salvas",
+      value: `${totalSessions}`,
+    },
+  ]
+    .map(
+      (item) => `
+        <article class="overview-card">
+          <span class="label">${item.label}</span>
+          <strong>${item.value}</strong>
+        </article>
+      `
+    )
+    .join("");
+
   weekBars.innerHTML = weekDays
     .map((day, index) => {
       const status = getDayStatus(index);
       return `
-        <div class="week-day ${status === "done" ? "done" : ""}">
+        <div class="week-day ${status}">
           <span>${day.short}</span>
           <strong>${status === "done" ? "OK" : status === "today" ? "Hoje" : "..."}</strong>
         </div>
@@ -1867,6 +2279,11 @@ function renderProgress() {
                 <span class="label">${label}</span>
               </div>
               <p>${translateGoal(session.goal)} | ${translateLevel(session.level)} | ${session.duration} min</p>
+              <div class="history-tags">
+                <span class="tag">${translateGoal(session.goal)}</span>
+                <span class="tag">${translateLevel(session.level)}</span>
+                <span class="tag">${session.duration} min</span>
+              </div>
             </article>
           `;
         })
